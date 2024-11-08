@@ -8,13 +8,7 @@ import {
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { useFormContext } from "react-hook-form";
 
-const ScaleForm = ({
-  formField,
-  label,
-}: {
-  formField: string;
-  label: string;
-}) => {
+const ScaleForm = ({ formField }: { formField: string }) => {
   const { control } = useFormContext();
 
   return (
@@ -24,15 +18,14 @@ const ScaleForm = ({
       render={({ field }) => {
         return (
           <FormItem className="text-xs lg:text-sm">
-            <FormLabel>{label}</FormLabel>
             <FormControl>
               <RadioGroup
-                onValueChange={field.onChange}
+                onValueChange={(value) => field.onChange(Number(value))}
                 defaultValue={field.value}
-                className="flex justify-between text-xs items-center"
+                className="flex justify-between text-xs lg:text-sm items-center"
               >
-                <p className="font-normal">
-                    Tidak <br /> Setuju
+                <p className="font-semibold">
+                  Tidak <br /> Setuju
                 </p>
                 <FormItem className="flex flex-col items-center">
                   <FormLabel>1</FormLabel>
@@ -65,9 +58,7 @@ const ScaleForm = ({
                   </FormControl>
                 </FormItem>
 
-                <p className="font-normal">
-                  Setuju
-                </p>
+                <p className="font-semibold">Setuju</p>
               </RadioGroup>
             </FormControl>
             <FormMessage />

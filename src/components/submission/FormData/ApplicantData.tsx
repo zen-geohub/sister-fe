@@ -74,7 +74,7 @@ const ApplicantData = () => {
             name="Kecamatan"
             render={({ field }) => {
               return (
-                <FormItem>
+                <FormItem className="w-1/2">
                   <FormLabel className="text-xs lg:text-sm">
                     Kecamatan *
                   </FormLabel>
@@ -92,7 +92,7 @@ const ApplicantData = () => {
             name="Kelurahan"
             render={({ field }) => {
               return (
-                <FormItem>
+                <FormItem className="w-1/2">
                   <FormLabel className="text-xs lg:text-sm">
                     Kelurahan *
                   </FormLabel>
@@ -113,7 +113,7 @@ const ApplicantData = () => {
             name="Koordinat Lintang"
             render={({ field }) => {
               return (
-                <FormItem>
+                <FormItem className="w-1/2">
                   <FormLabel className="text-xs lg:text-sm">
                     Koordinat Lintang *
                   </FormLabel>
@@ -131,7 +131,7 @@ const ApplicantData = () => {
             name="Koordinat Bujur"
             render={({ field }) => {
               return (
-                <FormItem>
+                <FormItem className="w-1/2">
                   <FormLabel className="text-xs lg:text-sm">
                     Koordinat Bujur *
                   </FormLabel>
