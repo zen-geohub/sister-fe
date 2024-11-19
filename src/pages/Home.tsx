@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import backgroundImage from "../assets/images/backdrop.png"
-import logoUGM from "../assets/images/Lambang UGM-emas.png"
+import backgroundImage from "../assets/images/backdrop.png";
+import logoUGM from "../assets/images/Lambang UGM-emas.png";
 
 const Header = () => {
   const [fixedHeader, setFixedHeader] = useState<boolean>(false);
@@ -45,26 +45,30 @@ const Header = () => {
 };
 
 const Hero = () => {
-
   return (
     <div className="w-full h-full relative font-poppins">
-        <img
-          src={backgroundImage}
-          className="object-cover w-full h-full absolute top-0 brightness-50"
-        />
-
-      <div className="w-full h-[calc(100dvh-72px)] gap-2 p-4 lg:p-16 absolute bottom-0 bg-transparent flex flex-col lg:flex-row-reverse justify-center items-center">
+      <img
+        src={backgroundImage}
+        className="object-cover w-full h-full absolute top-0 brightness-50"
+      />
+      <div className="w-full h-[calc(100dvh-72px)] gap-6 lg:gap-2 p-4 lg:p-16 absolute bottom-0 bg-transparent flex flex-col justify-center items-center">
+        <h1 className="text-lg lg:text-2xl text-white font-bold text-justify">
+          Collaborative Approaches in Mapping & Mitigating Exposures and
+          Vulnerable Groups of Areas Impacted by Commercial Developments with
+          Generative AI
+        </h1>
+        <p className="text-white text-xs text-justify lg:text-center lg:text-sm mb-4">
+          Keikutsertaan dalam penelitian ini bersifat <strong>sukarela</strong>. Kerahasiaan data responden akan dijaga sepenuhnya.
+        </p>
         <div className="flex flex-col gap-2 px-2 lg:pr-28">
-            <Link to={"/submission"}>
-              <Button className="w-fit">Isi Survei</Button>
-            </Link>
+          <Link to={"/submission"}>
+            <Button className="w-fit">Isi Survei</Button>
+          </Link>
         </div>
       </div>
-
     </div>
   );
 };
-
 
 const Home = () => {
   return (
@@ -72,7 +76,7 @@ const Home = () => {
       <Header />
       <Hero />
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
