@@ -2,7 +2,7 @@ import { z } from "zod";
 
 const statementSchema = z.object({
   statement: z.string().min(1),
-  scale: z.number().optional(),
+  scale: z.number().min(1, "Pernyataan tidak boleh kosong!"),
   additionalInfo: z.string().optional(),
 });
 

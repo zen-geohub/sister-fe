@@ -177,6 +177,8 @@ const Submission = () => {
     console.log(value);
     (async () => {
       try {
+        const date = new Date()
+        console.log(date.toLocaleString('en-US', { timeZone: 'Asia/Jakarta' }))
         const response = await fetch(`${import.meta.env.VITE_BACKEND}/form`, {
           method: "POST",
           headers: {
@@ -190,7 +192,7 @@ const Submission = () => {
               village: value.Kelurahan,
               latitude: value["Koordinat Lintang"],
               longitude: value["Koordinat Bujur"],
-              dateSubmitted: new Date(),
+              dateSubmitted: date.toLocaleString('en-US', { timeZone: 'Asia/Jakarta' }),
             },
             environmentQuality: value.environmentQuality,
             security: value.security,
@@ -315,12 +317,12 @@ const Submission = () => {
         <DialogContent onInteractOutside={(e) => e.preventDefault()}>
           <DialogTitle>Status</DialogTitle>
           <div className="flex justify-center items-center text-xl">
-            {submitMessage === "Data berhasil dikirim!" ? <p>Terima kasih telah mengisi survei!</p> : <p>Pengisian survei gagal!</p>}
+            {submitMessage === "Data berhasil diterima!" ? <p>Terima kasih telah mengisi survei!</p> : <p>Pengisian survei gagal!</p>}
           </div>
           <DialogFooter className="flex justify-center">
             {submitMessage !== "Data berhasil diterima!" ? (
-              <DialogClose>
-                <Button asChild>Kembali ke formulir</Button>
+              <DialogClose asChild>
+                <Button>Kembali ke formulir</Button>
               </DialogClose>
             ) : (
               <Link to="/">
